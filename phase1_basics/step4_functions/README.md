@@ -41,3 +41,14 @@ Open [practice.go](./practice.go).
 1. Implement `CalculateRectangle` to return both the Area and Perimeter of a rectangle using named return values.
 2. Test it by calling it from `main.go`.
 3. Let me know when you are ready for a review!
+
+---
+
+## 🎉 Shubham's Fun Corner 🎉
+
+### 👦 The "Younger Brother" Analogy
+Multiple return values are like sending your younger brother to the local shop. You tell him to get milk. He returns with **milk** AND the **change**. If the shop is closed, he returns with **no milk** and an **excuse** (error). 
+In Go, functions do exactly this: `result, err := doSomething()`
+
+### ☕ Chai Break Thought
+You can name your return values in Go. It's like naming your children before they are born—very organized!

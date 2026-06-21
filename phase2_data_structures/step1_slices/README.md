@@ -33,3 +33,14 @@ Open [practice.go](./practice.go).
 1. Implement `FilterEven` to filter even numbers from a slice.
 2. Write code in `main.go` to test your slice function.
 3. Tell me when you are ready for a review!
+
+---
+
+## 🎉 Shubham's Fun Corner 🎉
+
+### 👖 The "Elastic Track Pants" Analogy
+*   **Arrays** are like formal wedding suits: fixed size. If you gain even a little weight (append elements), the suit rips (compile error).
+*   **Slices** are like elastic track pants: dynamic. They stretch automatically as you eat more samosas. Under the hood, Go silently swaps them for a larger pair (backing array) when you exceed capacity.
+
+### ☕ Chai Break Thought
+When you slice a slice, you are just looking at a section of the same cloth. Don't be surprised if modifying the sub-slice colors the main slice!

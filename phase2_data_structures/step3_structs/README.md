@@ -35,3 +35,18 @@ Open [practice.go](./practice.go).
 2. `Withdraw` should check if the account has enough funds and return an error if it doesn't.
 3. Test your struct and methods in `main.go`.
 4. Tell me when you are ready for a review!
+
+---
+
+## 🎉 Shubham's Fun Corner 🎉
+
+### 🍱 The "Special Thali" Analogy
+A struct is like ordering a special Indian Thali. Instead of ordering rice, dal, and paneer separately, you get a single pre-defined plate containing:
+*   Rice (`string`)
+*   Dal (`float64`)
+*   Paneer (`int`)
+*   Samosa (`bool`)
+It groups different items into a single delicious package!
+
+### ☕ Chai Break Thought
+Pointer receivers let you change the food inside the Thali. Value receivers let you look at the food, but you can't eat or modify it. Choose your receivers wisely!

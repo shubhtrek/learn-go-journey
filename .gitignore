@@ -31,3 +31,8 @@ go.work.sum
 # OS files
 .DS_Store
 Thumbs.db
+
+# Learning Syllabus & Roadmaps
+go_syllabus_detailed.md
+future_roadmap.md
+

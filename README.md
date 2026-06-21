@@ -66,4 +66,4 @@ go mod init <module-name>
 
 ---
 
-*Made with 💖 by Shubham*
+*Made with 💖 by Shvbh*

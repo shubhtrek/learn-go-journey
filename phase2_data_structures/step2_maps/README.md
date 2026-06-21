@@ -43,3 +43,14 @@ Open [practice.go](./practice.go).
 1. Implement `GetPrice` to look up item prices in a menu map using the comma-ok idiom.
 2. Write code in `main.go` to test this map lookup.
 3. Let me know when you've written the solution!
+
+---
+
+## 🎉 Shubham's Fun Corner 🎉
+
+### 👵 The "Grandmother's Memory" Analogy
+Maps are like a contact list in your grandmother's head. You ask: *"Dadi, Ramesh?"* She instantly responds: *"Sharma ji ka beta, class topper, lives in flat 4B."* 
+She doesn't search through a notebook from page 1. The search time is instantaneous—**O(1)**.
+
+### ☕ Chai Break Thought
+Remember the comma-ok check! It's like asking: *"Dadi, does Ramesh exist?"* before you try to call him. If you don't check, Go might return a silent `0` and you'll call the wrong person!

@@ -50,3 +50,19 @@ Open [practice.go](./practice.go).
 1. Implement the `PrintDetails` function to print your name and favorite snack.
 2. To test it, write code inside `func main()` in `main.go` that calls `PrintDetails` with your details and run `go run main.go`.
 3. Tell me when you're done, and I will manually review your implementation!
+
+---
+
+## 🎉 Shubham's Fun Corner 🎉
+
+### 💍 The "Dulha" (Groom) Analogy
+Why is `package main` and `func main` so special? Because it is the **Dulha** of this wedding. You can have 50 other files (relatives) in the folder, but without the Dulha (`main`), there is no wedding (executable binary)! 
+
+### ☕ Chai Break Thought
+> Java developers writing:
+> `public static void main(String[] args)`
+>
+> Go developers writing:
+> `func main()`
+> 
+> Work smart, not hard. Smile and give `go run .` a try!

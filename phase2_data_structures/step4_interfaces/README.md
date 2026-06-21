@@ -36,3 +36,13 @@ Open [practice.go](./practice.go).
 1. Define the `Area()` method for `Rectangle` and `Circle` structs so they implicitly satisfy the `Shape` interface.
 2. In `main.go`, write a function `PrintArea(s Shape)` and pass both structs to it to print their areas.
 3. Message me for manual review!
+
+---
+
+## 🎉 Shubham's Fun Corner 🎉
+
+### 👵 The "Sanskari Beta" Analogy
+Go's implicit interfaces are like traditional society standards. You don't need a certificate saying *"I am a Sanskari child"*. If you touch your elders' feet, talk politely, and drink tea with guests (implement the methods), the neighborhood automatically treats you as Sanskari (implicitly implements the interface)!
+
+### ☕ Chai Break Thought
+If it walks like a duck, and quacks like a duck, Go says: *"Close enough, it's a duck!"*

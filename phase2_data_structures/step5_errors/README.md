@@ -34,3 +34,14 @@ Open [practice.go](./practice.go).
 1. Implement `SafeDivide` to perform division and return a custom error if divisor is `0`.
 2. Test your implementation in `main.go` and handle the error gracefully by printing a warning.
 3. Message me for review!
+
+---
+
+## 🎉 Shubham's Fun Corner 🎉
+
+### 🚗 The "Potholes on Indian Roads" Analogy
+In other languages, people write code and hope for the best, letting exceptions crash the app later. 
+In Go, handling errors is like driving on city roads: you look out for potholes every few meters (`if err != nil`). It requires attention, but it guarantees you and your car arrive safely!
+
+### ☕ Chai Break Thought
+Errors are not exceptions; they are just variables. Treat them with respect, don't ignore them, and keep smiling!
