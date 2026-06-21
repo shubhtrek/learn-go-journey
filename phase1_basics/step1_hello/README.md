@@ -1,74 +1,89 @@
-# Step 1.1: Hello World & Go Tooling 🚀
+# Step 1.1: Hello World, Syntax Structure & Go Modules 🚀
 
-Welcome to Step 1.1! Let's build a rock-solid foundation by understanding exactly what happens when you run a Go program.
+Welcome to Step 1.1. In this step, we analyze the structure of a basic Go program, the source compilation requirements, package initialization order, and the Go module dependency system.
 
----
-
-## 🔍 Deep Dive: The Mechanics of Go Executables
-
-Unlike Python or Node.js, Go does not run on an interpreter or a virtual machine (like Java's JVM). Go compiles directly into **native machine code** (a binary). 
-
-When you run `go build main.go`:
-1. The compiler reads your source code.
-2. It parses it into an Abstract Syntax Tree (AST).
-3. It optimizes the code (like removing dead code or inlining small functions).
-4. It compiles it into a single executable binary specific to your OS (e.g., `.exe` on Windows, or an ELF binary on Linux).
-5. The compiled binary contains the **Go Runtime** embedded inside it. This runtime handles memory management, garbage collection, and scheduling concurrent tasks.
-
-### `go run` vs `go build`
-*   `go run main.go`: Under the hood, this compiles your code to a temporary directory and immediately executes it. It's great for local development because it's fast.
-*   `go build main.go`: This compiles the code and saves the binary in your current folder. You deploy this binary directly to production servers. The server doesn't even need Go installed to run it!
+Official documentation:
+*   [The Go Programming Language Specification: Program Execution](https://golang.org/ref/spec#Program_execution)
+*   [How to Write Go Code (Modules)](https://go.dev/doc/code)
+*   [The Go Blog: Organize Your Code](https://go.dev/doc/effective_go#names)
 
 ---
 
-## 🔠 Code Analysis
+## 🔍 Deep Dive 1: Source File Encoding and Lexical Elements
 
+Go source files are defined by the official specification as sequences of Unicode characters encoded in **UTF-8**. 
+
+### 1. Semicolon Injection Rule
+If you look at Go code, you will notice the absence of semicolons at the end of statements (unlike C, C++, or Java). However, the Go formal grammar *does* use semicolons to terminate statements. 
+To achieve clean syntax, the Go lexer automatically injects semicolons at the end of a line if the line's final token is:
+*   An identifier (e.g., a variable or function name).
+*   A basic literal (such as a string, integer, or float).
+*   One of the keywords: `break`, `continue`, `fallthrough`, or `return`.
+*   One of the operators and punctuation: `++`, `--`, `)`, `]`, or `}`.
+
+**Gotcha (Opening Braces)**: Because of this rule, you cannot place the opening brace of a control block or function on a new line:
 ```go
-package main
+// This will result in a compile error because a semicolon is injected after main()
+func main() 
+{ // ❌ Syntax error: unexpected semicolon or newline before {
+}
 
-import "fmt"
-
-func main() {
-    fmt.Println("👋 Namaste, Go!")
+// This compiles successfully
+func main() { // ✅ Correct
 }
 ```
 
-*   **`package main`**: Tells Go that this file compiles to an executable program, rather than a shared library. Every executable Go program must have a package named `main` containing a `main` function.
-*   **`import "fmt"`**: The format package from Go's standard library. It handles input and output formatting.
-*   **`func main()`**: The entrance point of the program.
+### 2. Package Scoping & Directory Structure
+Every Go source file must begin with a package clause:
+```go
+package <name>
+```
+*   The package name determines the default identifier for importing packages.
+*   By convention, all files in the same directory must belong to the **same package**.
+*   The `main` package is special: it defines an executable program rather than a shared library.
 
 ---
 
-## ⚠️ Common Gotchas (Avoid These!)
-1.  **Missing `package main`**: If you define `package hello` instead of `package main`, `go run` will fail because it cannot find the entry point.
-2.  **Unused Imports**: If you import a package and don't use it, Go will throw a compile error. This is to prevent dependency bloat.
+## 🔍 Deep Dive 2: Package Initialization and Execution Order
+
+Understanding how Go initializes program state before executing `main()` is critical for debugging bootstrap configurations.
+
+```mermaid
+graph TD
+    A[Imported Packages Initialized Recursively] --> B[Package-Level Constants & Variables Evaluated]
+    B --> C[init Functions Executed in Lexical Order]
+    C --> D[main.main Called]
+```
+
+1.  **Dependency Initialization**: If the `main` package imports package `A`, and package `A` imports package `B`, Go initializes them recursively starting at the leaf nodes (Package `B` first, then `A`, then `main`).
+2.  **Package-Level Variables**: Within a package, package-level variables are initialized first. If variables have dependencies on each other, they are evaluated in their dependency order.
+3.  **The `init` Function**: After all variables are initialized, any functions named `init()` defined in the package are executed.
+    *   `init` functions take no arguments and return no values.
+    *   A single package/file can have **multiple** `init` functions. They are executed in the order they are presented to the compiler (typically lexical order by file name).
+    *   You cannot call `init()` explicitly in your code; it is invoked solely by the Go runtime.
+4.  **Entry Point**: Once all imported packages and the `main` package are fully initialized, the runtime calls `main.main()`. Program execution terminates when `main.main` returns or is aborted.
+
+---
+
+## 🛠️ Go Modules Under the Hood
+
+A Go module is a collection of Go packages stored in a file tree with a `go.mod` file at its root. 
+
+*   **`go.mod`**: Defines the module's import path, minimum Go version compatibility, and explicit dependency requirements (using semantic versioning, e.g., `v1.2.3`).
+*   **`go.sum`**: Contains cryptographic hashes of the specific versions of dependencies downloaded for the module. This is used by the Go toolchain to verify that future downloads of these dependencies match the exact content of the initial download, preventing security attacks (such as dependency hijacking).
+
+---
+
+## ⚠️ Common Gotchas
+
+1.  **Unused Imports and Variables**: In Go, importing a package or declaring a local variable without using it is a compiler error. This enforces a clean dependency graph and prevents memory bloat. You can use the blank identifier `_` to suppress errors for imported packages that are required for their side-effects (like calling their `init` functions).
+2.  **Mismatched Directory and Package Names**: While the package name inside the source file does not strictly need to match the directory name, it is a highly recommended convention. The only exception is the `main` package, which is frequently contained in directories named after the application.
 
 ---
 
 ## 🎯 Practice Challenge
-Open [practice.go](./practice.go).
-1. Implement the `PrintDetails` function to print your name and favorite snack.
-2. To test it, write code inside `func main()` in `main.go` that calls `PrintDetails` with your details and run `go run main.go`.
-3. Tell me when you're done, and I will manually review your implementation!
-
----
-
-## 🎉 Shubham's Fun Corner 🎉
-
-### 💍 The "Dulha" (Groom) Analogy
-Why is `package main` and `func main` so special? Because it is the **Dulha** of this wedding. You can have 50 other files (relatives) in the folder, but without the Dulha (`main`), there is no wedding (executable binary)! 
-
-### ☕ Chai Break Thought
-> Java developers writing:
-> `public static void main(String[] args)`
->
-> Go developers writing:
-> `func main()`
-> 
-> Work smart, not hard. Smile and give `go run .` a try!
-
-
-### 👑 Marathi Swag: Chala Suru Karu Ya!
-*   **Chala bhava!** (Let's go brother!) Go coding is **lai bhari** (awesome) because it doesn't have the useless drama of other languages.
-*   Remember: `package main` is like the **Dulha** (Groom) or the main coordinator at a wedding. If he doesn't show up, the whole event is **fail**!
-*   To run your code, just hit `go run .` in your terminal and say: **"Ganpati Bappa Morya!"**
+Open [practice.go](./practice.go) and verify that you have implemented the details correctly, then run the code using:
+```bash
+go run .
+```
+Verify that the output matches your expectations.
