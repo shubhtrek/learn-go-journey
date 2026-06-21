@@ -1,6 +1,8 @@
 package main
 
-import "errors"
+// To avoid compiler errors, the import is commented out until you write your code.
+// Once you start writing your Withdraw function, uncomment the line below:
+// import "errors"
 
 type BankAccount struct {
 	Owner   string
@@ -13,7 +15,8 @@ func (b *BankAccount) Deposit(amount float64) {
 }
 
 // TODO: Implement the Withdraw method. 
-// If amount is greater than the balance, return an error: errors.New("insufficient funds")
+// If amount is greater than the balance, return an error (use errors.New("insufficient funds")).
+// Hint: You will need to uncomment the import statement or use another package.
 func (b *BankAccount) Withdraw(amount float64) error {
 	// Write your code here
 	return nil
