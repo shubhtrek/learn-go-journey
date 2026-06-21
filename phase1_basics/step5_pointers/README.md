@@ -50,3 +50,11 @@ Pointers are like forwarding a Google Maps link to your friend instead of trying
 
 ### ☕ Chai Break Thought
 A `nil` pointer is a pointer that points to nowhere. Attempting to read it is like navigating to a blank address and crashing your car. Keep your pointers safe, and always check before you enter!
+
+
+### 👑 Marathi Swag: The "Misal Pav" Location
+*   Pointers are all about efficiency.
+*   If your friend wants to eat the world's best **Misal Pav**, you don't lift the entire hotel on your back and bring it to him. 
+*   You just share the **Google Maps location (the pointer address)**! 
+*   - `&` is like clicking **"Share Location"** on your phone.
+*   - `*` is your friend actually arriving at the address and eating the Misal Pav!

@@ -46,3 +46,10 @@ Go's implicit interfaces are like traditional society standards. You don't need 
 
 ### ☕ Chai Break Thought
 If it walks like a duck, and quacks like a duck, Go says: *"Close enough, it's a duck!"*
+
+
+### 👑 Marathi Swag: The "Sanskari Mulga" Rule
+*   In Go, interfaces are implicit.
+*   You don't need a stamped certificate saying *"I am a well-behaved boy"*. 
+*   If you touch elders' feet, talk politely, and don't make noise (implement the methods), the society automatically declares you as a **"Sanskari Mulga"** (implements the interface)! 
+*   No fancy keywords required. **Lai bhari!**

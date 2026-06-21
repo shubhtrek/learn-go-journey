@@ -45,3 +45,10 @@ In Go, handling errors is like driving on city roads: you look out for potholes 
 
 ### ☕ Chai Break Thought
 Errors are not exceptions; they are just variables. Treat them with respect, don't ignore them, and keep smiling!
+
+
+### 👑 Marathi Swag: The "Mumbai Traffic" Rule
+*   Go does not have try-catch blocks. 
+*   Writing Go code is like driving on a highway full of potholes. You don't close your eyes and pray (try-catch). 
+*   You check for every pothole carefully: **`if err != nil { // take bypass }`**.
+*   It might look like extra typing, but it prevents your car (program) from crashing!

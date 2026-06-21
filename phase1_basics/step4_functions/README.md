@@ -52,3 +52,10 @@ In Go, functions do exactly this: `result, err := doSomething()`
 
 ### ☕ Chai Break Thought
 You can name your return values in Go. It's like naming your children before they are born—very organized!
+
+
+### 👑 Marathi Swag: The "Kanda Bhaji" Analogy
+*   Multiple return values is like sending your younger brother to get **Kanda Bhaji** (onion fritters).
+*   He returns with the **Bhaji** AND the **balance money** (change). 
+*   If the shop is closed, he returns with **nothing** and a loud excuse (**error**): *"Bhaji sampali bhava!"*
+*   In Go, we write: `bhaji, err := getBhaji()`. If `err != nil`, you know you're staying hungry!

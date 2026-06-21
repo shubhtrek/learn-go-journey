@@ -50,3 +50,17 @@ It groups different items into a single delicious package!
 
 ### ☕ Chai Break Thought
 Pointer receivers let you change the food inside the Thali. Value receivers let you look at the food, but you can't eat or modify it. Choose your receivers wisely!
+
+
+### 👑 Marathi Swag: The "Special Maharaja Thali"
+*   A struct is like ordering a **Maharaja Thali**.
+*   Instead of ordering Chapati, Paneer, Rice, and Gulab Jamun separately, you get a single plate containing everything:
+    ```go
+    type Thali struct {
+        Chapati int
+        Paneer  string
+        Sweet   bool
+    }
+    ```
+*   **Pointer receiver (`*Thali`)**: Lets you actually eat or modify the items inside the plate.
+*   **Value receiver (`Thali`)**: You are just looking at a photo of the Thali. You can't change it!

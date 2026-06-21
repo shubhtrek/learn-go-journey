@@ -54,3 +54,9 @@ She doesn't search through a notebook from page 1. The search time is instantane
 
 ### ☕ Chai Break Thought
 Remember the comma-ok check! It's like asking: *"Dadi, does Ramesh exist?"* before you try to call him. If you don't check, Go might return a silent `0` and you'll call the wrong person!
+
+
+### 👑 Marathi Swag: The "Kirana Shop Uncle"
+*   Maps are like the local Kirana shop uncle. You ask: *"Uncle, Pohe kuthe aahet?"* (Where is the Pohe?).
+*   He doesn't search the whole shop. He instantly points to rack 2. **O(1) search speed, bhava!**
+*   But remember the comma-ok check! Always check: `value, exist := shop["Pohe"]`. If `exist` is false, don't try to buy it, otherwise you'll get a null panic!

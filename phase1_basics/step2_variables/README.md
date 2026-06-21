@@ -60,3 +60,9 @@ Go's static typing is like typical strict parents. If you declared that you want
 
 ### ☕ Chai Break Thought
 In Go, variables are never left with random junk in memory. They get a supportive zero-value. If only our plans had this kind of automatic backup system!
+
+
+### 👑 Marathi Swag: No Timepass with Types!
+*   Go is super strict. It’s like having a **khadus (strict) uncle** who won't let you mix Chai and Coffee. If you declare an `int`, it stays `int`.
+*   If you try to add an `int` and a `float` directly, Go will scream: **"Aata bagha, mismatched types!"** You have to convert them explicitly: `float64(your_int)`.
+*   Zero Values: Go handles them automatically. Even if you forget to initialize, Go sets it to `0` or `""`. No empty-pocket stress!

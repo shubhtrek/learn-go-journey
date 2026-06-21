@@ -55,3 +55,9 @@ There is no `while` loop, no `do-while` loop. Just one `for` loop that can dress
 > While loop? Do-while loop? 
 > Go compiler: *We don't do that here.*
 Keep it simple. Take a deep breath, stretch, and conquer the FizzBuzz challenge!
+
+
+### 👑 Marathi Swag: The One and Only Loop!
+*   Other languages have 4 types of loops. Go says: **"Fukat timepass nako!"** (No wasted time!). It only gives you the `for` loop.
+*   If you want a while loop, you just write `for condition {}`. Go is smart and lazy, just like us!
+*   **Chai break reminder**: Have a cup of hot tea and a biscuit before you tackle the FizzBuzz challenge. Keep smiling, bhava!

@@ -44,3 +44,9 @@ Open [practice.go](./practice.go).
 
 ### ☕ Chai Break Thought
 When you slice a slice, you are just looking at a section of the same cloth. Don't be surprised if modifying the sub-slice colors the main slice!
+
+
+### 👑 Marathi Swag: The "Elastic Track Pants"
+*   **Arrays** are like your tightest formal jeans: if you eat two extra vada pavs, they will tear (compile error!).
+*   **Slices** are like your comfortable **elastic track pants**: they stretch automatically when you append more food!
+*   Under the hood, Go automatically doubles the capacity when needed. **Kadak technology!**

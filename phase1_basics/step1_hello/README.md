@@ -66,3 +66,9 @@ Why is `package main` and `func main` so special? Because it is the **Dulha** of
 > `func main()`
 > 
 > Work smart, not hard. Smile and give `go run .` a try!
+
+
+### 👑 Marathi Swag: Chala Suru Karu Ya!
+*   **Chala bhava!** (Let's go brother!) Go coding is **lai bhari** (awesome) because it doesn't have the useless drama of other languages.
+*   Remember: `package main` is like the **Dulha** (Groom) or the main coordinator at a wedding. If he doesn't show up, the whole event is **fail**!
+*   To run your code, just hit `go run .` in your terminal and say: **"Ganpati Bappa Morya!"**
